@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon_light.webp">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Tic Tac Toe</h1>
+
+            <div class="controls">
+                <div class="toggle-container">
+                    <label class="switch">
+                        <input type="checkbox" id="modeSwitch" />
+                        <span class="slider"></span>
+                    </label>
+                    <span class="toggle-label">AI Mode</span>
+                </div>
+
+                <div class="difficulty-container">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty" disabled>
+                        <option value="easy" selected>Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="scoreboard">
+                <div>Player X: <span id="scoreX">0</span></div>
+                <div>Player O: <span id="scoreO">0</span></div>
+            </div>
+            <p id="message"></p>
+            <div class="game-board" id="gameBoard">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <button id="resetBtn">Reset Game</button>
+        </main>
+        <footer>
+            <p>&copy; 2025 - Made with ❤️ by <a href="https://www.github.com/Balaji-R-05" target="_blank"
+                    rel="noopener noreferrer">Balaji R</a></p>
+        </footer>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
