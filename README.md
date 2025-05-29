@@ -15,10 +15,19 @@ Play now: [https://Balaji-R-05.github.io/tic-tac-toe/](https://Balaji-R-05.githu
 - Game reset option
 - Responsive design
 
-## 🚀 Getting Started
+## Getting Started
 ### 1. Clone the Repo
 ```bash
 git clone https://github.com/Balaji-R-05/tic-tac-toe.git
 cd tic-tac-toe
 ```
 ### 2. Open index.html in any browser
+
+
+## 🤝 Contributing
+
+We welcome your ideas, suggestions, and improvements!
+
+**Fork it. Improve it. Build on it.**  
+Whether you want to fix a bug, add a feature, or just explore, feel free to dive in!  
+✨ Don't forget to ⭐ the repo if you find it useful or fun!
