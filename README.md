@@ -1,6 +1,8 @@
 # Tic Tac Toe
 A fun Tic Tac Toe game with optional AI modes — Random, Minimax and a sneaky mix! Challenge your brain, test strategies, and enjoy a polished game with animations and fireworks on victory!
 
+<img src="./assets/demo.png" alt="Demo Pic">
+
 ## 🌐 Live Demo
 Play now: [https://Balaji-R-05.github.io/tic-tac-toe/](https://Balaji-R-05.github.io/tic-tac-toe/)
 
