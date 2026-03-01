@@ -5,10 +5,19 @@ const scoreXDisplay = document.getElementById('scoreX');
 const scoreODisplay = document.getElementById('scoreO');
 const modeSwitch = document.getElementById('modeSwitch');
 const difficultySelect = document.getElementById('difficulty');
+const clearStatsBtn = document.getElementById('clearStatsBtn');
 
 let gameMode = '2p'; // default 2 player
-let scoreX = 0;
-let scoreO = 0;
+
+// Initialize scores from localStorage
+let savedScores = JSON.parse(localStorage.getItem('tic-tac-toe-scores')) || { x: 0, o: 0 };
+let scoreX = savedScores.x;
+let scoreO = savedScores.o;
+
+// Update initial display
+scoreXDisplay.textContent = scoreX;
+scoreODisplay.textContent = scoreO;
+
 let board = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer = 'X';
 let gameActive = true;
@@ -137,6 +146,8 @@ function updateScore(player) {
         scoreO++;
         scoreODisplay.textContent = scoreO;
     }
+    // Save to localStorage
+    localStorage.setItem('tic-tac-toe-scores', JSON.stringify({ x: scoreX, o: scoreO }));
 }
 
 function resetGame() {
@@ -217,5 +228,16 @@ modeSwitch.addEventListener('change', () => {
 difficultySelect.addEventListener('change', () => {
     difficulty = difficultySelect.value;
 });
+
+clearStatsBtn.addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear all persistent statistics?')) {
+        scoreX = 0;
+        scoreO = 0;
+        scoreXDisplay.textContent = '0';
+        scoreODisplay.textContent = '0';
+        localStorage.removeItem('tic-tac-toe-scores');
+    }
+});
+
 cells.forEach(cell => cell.addEventListener('click', handleCellClick));
 resetBtn.addEventListener('click', resetGame);

@@ -127,20 +127,37 @@ footer a {
   color: #f43f5e;
 }
 
-#resetBtn {
+.controls-main {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#resetBtn,
+#clearStatsBtn {
   background-color: transparent;
   color: var(--primary-color);
-  border: 2px solid var(--primary-color);
-  padding: 10px 20px;
-  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+  padding: 8px 16px;
+  font-size: 0.9rem;
   cursor: pointer;
-  margin-top: 0.5rem;
-  transition: 0.2s;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 4px;
 }
 
 #resetBtn:hover {
   background-color: var(--primary-color);
-  color: #000;
+  color: #fff;
+}
+
+#clearStatsBtn {
+  color: #64748b;
+  border-color: #334155;
+}
+
+#clearStatsBtn:hover {
+  background-color: #334155;
+  color: #f1f5f9;
 }
 
 #message {
