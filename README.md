@@ -1,35 +1,53 @@
-# Tic Tac Toe
-A fun Tic Tac Toe game with optional AI modes — Random, Minimax and a sneaky mix! Challenge your brain, test strategies, and enjoy a polished game with animations and fireworks on victory!
+# Tic-Tac-Toe
 
-<img src="./assets/demo.png" alt="Demo Pic">
+A beautifully designed, responsive Tic-Tac-Toe game featuring a minimalist flat UI, smart AI opponents, and persistent statistics.
+
+![Main Gameplay Preview](./assets/main-preview.png)
+![Detailed View](./assets/gameplay-snapshot.png)
 
 ## 🌐 Live Demo
-Play now: [https://Balaji-R-05.github.io/tic-tac-toe/](https://Balaji-R-05.github.io/tic-tac-toe/)
+Experience the game here: **[Live Demo](https://Balaji-R-05.github.io/tic-tac-toe/)**
 
-## Tech Stack
-- HTML5
-- CSS3
-- Javascript
+---
 
-## 🚀 Features
-- 2-player gameplay
-- Win/draw detection
-- Game reset option
-- Responsive design
+## ✨ Features
+
+- **Multiple Game Modes**: Play against a friend locally or challenge the computer.
+- **Smart AI**: Choose from three difficulty levels (Easy, Medium, Impossible) powered by the Minimax algorithm.
+- **Persistent Stats**: Your win/loss records are saved to `localStorage`, so your progress is never lost.
+- **Move History**: Track every move made during the game in a side-by-side (desktop) or bottom (mobile) scrollable list.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
+- **Visual Feedback**: High-contrast winning highlights and celebratory fireworks animations.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend**: HTML5, CSS3 (Vanilla), JavaScript (ES6+)
+- **Animations**: [Confetti-JS](https://github.com/MathuSumuti/confetti-js) for victory celebrations.
+- **Typography**: [Inter](https://fonts.google.com/specimen/Inter) from Google Fonts.
+
+---
 
 ## Getting Started
-### 1. Clone the Repo
+
+### 1. Clone the repository
 ```bash
 git clone https://github.com/Balaji-R-05/tic-tac-toe.git
 cd tic-tac-toe
 ```
-### 2. Open index.html in any browser
 
+### 2. Run the application
+Simply open `index.html` in your favorite web browser! No compilation or installation required.
+
+---
 
 ## 🤝 Contributing
 
-We welcome your ideas, suggestions, and improvements!
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-**Fork it. Improve it. Build on it.**  
-Whether you want to fix a bug, add a feature, or just explore, feel free to dive in!  
-✨ Don't forget to ⭐ the repo if you find it useful or fun!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request

@@ -6,6 +6,7 @@ const scoreODisplay = document.getElementById('scoreO');
 const modeSwitch = document.getElementById('modeSwitch');
 const difficultySelect = document.getElementById('difficulty');
 const clearStatsBtn = document.getElementById('clearStatsBtn');
+const moveList = document.getElementById('moveList');
 
 let gameMode = '2p'; // default 2 player
 
@@ -56,6 +57,8 @@ function handleCellClick(e) {
     e.target.textContent = currentPlayer;
     e.target.classList.add(currentPlayer === 'X' ? 'x-mark' : 'o-mark');
 
+    addMoveToHistory(currentPlayer, index);
+
     const winnerCombo = checkWinner();
     if (winnerCombo) {
         highlightWin(winnerCombo);
@@ -95,6 +98,8 @@ function makeAIMove() {
     board[move] = 'O';
     cells[move].textContent = 'O';
     cells[move].classList.add('o-mark');
+
+    addMoveToHistory('O', move);
 
     const winnerCombo = checkWinner();
     if (winnerCombo) {
@@ -155,11 +160,21 @@ function resetGame() {
     currentPlayer = 'X';
     gameActive = true;
     message.textContent = '';
+    moveList.innerHTML = '';
     cells.forEach(cell => {
         cell.textContent = '';
         cell.classList.remove('win', 'x-mark', 'o-mark');
     });
     if (confetti) confetti.clear();
+}
+
+function addMoveToHistory(player, index) {
+    const li = document.createElement('li');
+    const row = Math.floor(index / 3) + 1;
+    const col = (index % 3) + 1;
+    li.textContent = `${player}: Row ${row}, Col ${col}`;
+    moveList.appendChild(li);
+    moveList.scrollTop = moveList.scrollHeight;
 }
 
 function launchConfetti() {
