@@ -5,10 +5,10 @@ A beautifully designed, responsive Tic-Tac-Toe game featuring a minimalist flat 
 ![Main Gameplay Preview](./assets/main-preview.png)
 ![Detailed View](./assets/gameplay-snapshot.png)
 
+
 ## 🌐 Live Demo
 Experience the game here: **[Live Demo](https://Balaji-R-05.github.io/tic-tac-toe/)**
 
----
 
 ## ✨ Features
 
@@ -19,7 +19,6 @@ Experience the game here: **[Live Demo](https://Balaji-R-05.github.io/tic-tac-to
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
 - **Visual Feedback**: High-contrast winning highlights and celebratory fireworks animations.
 
----
 
 ## 🛠️ Tech Stack
 
@@ -27,7 +26,6 @@ Experience the game here: **[Live Demo](https://Balaji-R-05.github.io/tic-tac-to
 - **Animations**: [Confetti-JS](https://github.com/MathuSumuti/confetti-js) for victory celebrations.
 - **Typography**: [Inter](https://fonts.google.com/specimen/Inter) from Google Fonts.
 
----
 
 ## Getting Started
 
@@ -40,7 +38,6 @@ cd tic-tac-toe
 ### 2. Run the application
 Simply open `index.html` in your favorite web browser! No compilation or installation required.
 
----
 
 ## 🤝 Contributing
 
