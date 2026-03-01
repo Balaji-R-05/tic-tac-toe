@@ -45,6 +45,7 @@ function handleCellClick(e) {
 
     board[index] = currentPlayer;
     e.target.textContent = currentPlayer;
+    e.target.classList.add(currentPlayer === 'X' ? 'x-mark' : 'o-mark');
 
     const winnerCombo = checkWinner();
     if (winnerCombo) {
@@ -84,6 +85,7 @@ function makeAIMove() {
 
     board[move] = 'O';
     cells[move].textContent = 'O';
+    cells[move].classList.add('o-mark');
 
     const winnerCombo = checkWinner();
     if (winnerCombo) {
@@ -144,7 +146,7 @@ function resetGame() {
     message.textContent = '';
     cells.forEach(cell => {
         cell.textContent = '';
-        cell.classList.remove('win');
+        cell.classList.remove('win', 'x-mark', 'o-mark');
     });
     if (confetti) confetti.clear();
 }
