@@ -129,10 +129,10 @@ function getRandomMove() {
 
 
 
-function checkWinner() {
+function checkWinner(targetBoard = board) {
     for (let combo of winningCombos) {
         const [a, b, c] = combo;
-        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        if (targetBoard[a] && targetBoard[a] === targetBoard[b] && targetBoard[a] === targetBoard[c]) {
             return combo;
         }
     }
@@ -185,7 +185,7 @@ function launchConfetti() {
 function minimax(newBoard, player) {
     const availSpots = newBoard.map((val, idx) => val === '' ? idx : null).filter(val => val !== null);
 
-    const winnerCombo = checkWinner();
+    const winnerCombo = checkWinner(newBoard);
     if (winnerCombo && newBoard[winnerCombo[0]] === 'X') {
         return { score: -10 };
     } else if (winnerCombo && newBoard[winnerCombo[0]] === 'O') {

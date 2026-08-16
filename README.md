@@ -13,7 +13,7 @@ Experience the game here: **[Live Demo](https://Balaji-R-05.github.io/tic-tac-to
 ## ✨ Features
 
 - **Multiple Game Modes**: Play against a friend locally or challenge the computer.
-- **Smart AI**: Choose from three difficulty levels (Easy, Medium, Impossible) powered by the Minimax algorithm.
+- **Smart AI**: Choose from three difficulty levels (Easy, Medium, Hard) powered by the Minimax algorithm.
 - **Persistent Stats**: Your win/loss records are saved to `localStorage`, so your progress is never lost.
 - **Move History**: Track every move made during the game in a side-by-side (desktop) or bottom (mobile) scrollable list.
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
