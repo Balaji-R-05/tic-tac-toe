@@ -8,9 +8,10 @@ const difficultySelect = document.getElementById('difficulty');
 const clearStatsBtn = document.getElementById('clearStatsBtn');
 const moveList = document.getElementById('moveList');
 
-let gameMode = '2p'; // default 2 player
+// The game starts in local two-player mode. AI mode changes the value to '1p'.
+let gameMode = '2p';
 
-// Initialize scores from localStorage
+// Scores persist between visits, while the board and move history do not.
 let savedScores = JSON.parse(localStorage.getItem('tic-tac-toe-scores')) || { x: 0, o: 0 };
 let scoreX = savedScores.x;
 let scoreO = savedScores.o;
@@ -48,6 +49,7 @@ const winningCombos = [
 
 
 
+/** Handle a human player's attempt to select a board cell. */
 function handleCellClick(e) {
     const index = e.target.dataset.index;
 
@@ -78,10 +80,11 @@ function handleCellClick(e) {
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
     if (gameMode === '1p' && currentPlayer === 'O') {
-        setTimeout(makeAIMove, 300); // slight delay for better UX
+        setTimeout(makeAIMove, 300); // Give the player a moment to see their move.
     }
 }
 
+/** Choose and apply the computer's move according to the selected difficulty. */
 function makeAIMove() {
     if (!gameActive) return;
 
@@ -119,6 +122,7 @@ function makeAIMove() {
 
     currentPlayer = 'X';
 }
+/** Return the index of a randomly selected empty cell. */
 function getRandomMove() {
     const emptyIndexes = board
         .map((val, idx) => val === '' ? idx : null)
@@ -129,6 +133,7 @@ function getRandomMove() {
 
 
 
+/** Return the completed winning pattern, or null when there is no winner. */
 function checkWinner(targetBoard = board) {
     for (let combo of winningCombos) {
         const [a, b, c] = combo;
@@ -139,10 +144,12 @@ function checkWinner(targetBoard = board) {
     return null;
 }
 
+/** Add the winning style to each cell in a completed pattern. */
 function highlightWin(combo) {
     combo.forEach(index => cells[index].classList.add('win'));
 }
 
+/** Increment a player's score and persist the updated totals in localStorage. */
 function updateScore(player) {
     if (player === 'X') {
         scoreX++;
@@ -155,6 +162,7 @@ function updateScore(player) {
     localStorage.setItem('tic-tac-toe-scores', JSON.stringify({ x: scoreX, o: scoreO }));
 }
 
+/** Clear the current round without changing the persistent scores. */
 function resetGame() {
     board = ['', '', '', '', '', '', '', '', ''];
     currentPlayer = 'X';
@@ -168,6 +176,7 @@ function resetGame() {
     if (confetti) confetti.clear();
 }
 
+/** Add a human-readable row and column entry to the move history. */
 function addMoveToHistory(player, index) {
     const li = document.createElement('li');
     const row = Math.floor(index / 3) + 1;
@@ -177,11 +186,16 @@ function addMoveToHistory(player, index) {
     moveList.scrollTop = moveList.scrollHeight;
 }
 
+/** Start the victory animation provided by Confetti-JS. */
 function launchConfetti() {
     confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
 }
 
+/**
+ * Evaluate possible future moves and return the best move for the player.
+ * O maximizes the score, X minimizes it, and a draw scores zero.
+ */
 function minimax(newBoard, player) {
     const availSpots = newBoard.map((val, idx) => val === '' ? idx : null).filter(val => val !== null);
 
